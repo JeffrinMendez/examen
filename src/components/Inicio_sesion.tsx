@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Props } from "react";
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { Button } from "react-native";
 import { useState } from 'react';
 
-const Inicio = () => {
+
+
+
+const Inicio_sesion = ({navigation}:Props) => {
 
 
     const [usuario, setUsuario] = useState(' ')
@@ -12,17 +15,12 @@ const Inicio = () => {
 
     const iniciar = () => {
 
-        if (usuario === 'hacker@gmail.com' && contraseña === '12345678') {
-
+      
            
+     
 
 
-
-
-        }
-
-
-
+       
 
 
     }
@@ -32,7 +30,7 @@ const Inicio = () => {
     return (
 
         <View style={styles.container}>
-            <Text>Usuario</Text>
+            <Text>Usuario{usuario}</Text>
 
 
 
@@ -59,15 +57,15 @@ const Inicio = () => {
                     borderColor: 'black',
                     borderWidth: 2,
                     borderRadius: 10,
+                    
 
 
 
                 }}></TextInput>
             <Button
-                onPress={iniciar}
+                onPress={() => navigation.navigate('Home')}
                 title="Entrar"
                 color="#22B5A3"
-                accessibilityLabel="Learn more about this purple button"
             />
 
 
@@ -88,4 +86,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Inicio;
+export default Inicio_sesion;
